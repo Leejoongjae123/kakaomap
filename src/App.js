@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react'
+import KaKaoMapScript from '../src/components/KaKaoMapScript'
 
 function App() {
+  useEffect(() => {
+    KaKaoMapScript();
+  }, []); // 마운트 될때 사용할수 있도록 useEffect 사용
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Hello World!</h2>
+      <div id='myMap' style={{
+            width: '100vw',
+            height: '100vh'
+        }}></div>
     </div>
   );
 }
